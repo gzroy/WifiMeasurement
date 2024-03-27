@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Wifi Measurement</string>
+    <string name="screen_title">Wifi信号测量</string>
+    <string name="label_position_name">输入位置信息</string>
+    <string name="label_current_angle">当前方向</string>
+    <string name="measure">测量</string>
+    <string name="report_title">Wifi测量报告</string>
+    <string name="report_position_name">位置</string>
+    <string name="report_header_bssid">BSS ID</string>
+    <string name="report_header_strength">信号强度</string>
+    <string name="upload">上传</string>
+</resources>
