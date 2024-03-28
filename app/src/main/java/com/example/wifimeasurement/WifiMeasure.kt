@@ -109,7 +109,7 @@ fun MeasureScreen(
         )
         Spacer(modifier = Modifier.height(16.dp))
         TextButton(
-            onClick = { navController.navigate("report/" + measureViewModel.positionName)},
+            onClick = { navController.navigate("report/" + measureViewModel.positionName + "/" + angle)},
             shape = RectangleShape,
             contentPadding = PaddingValues(16.dp),
             modifier = Modifier

@@ -9,4 +9,5 @@
     <string name="report_header_bssid">BSS ID</string>
     <string name="report_header_strength">信号强度</string>
     <string name="upload">上传</string>
+    <string name="report_angle">角度</string>
 </resources>

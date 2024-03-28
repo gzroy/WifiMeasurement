@@ -47,7 +47,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 @Composable
-fun WifiMeasureReport (positionName: String?) {
+fun WifiMeasureReport (positionName: String?, angle: String?) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
@@ -84,6 +84,12 @@ fun WifiMeasureReport (positionName: String?) {
             modifier = Modifier.padding(10.dp),
             color = MaterialTheme.colorScheme.secondary
         )
+        Text(
+            text = stringResource(id = R.string.report_angle)+": "+angle,
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.padding(10.dp),
+            color = MaterialTheme.colorScheme.secondary
+        )
         LazyColumn(
             Modifier
                 .fillMaxWidth()
@@ -100,7 +106,7 @@ fun WifiMeasureReport (positionName: String?) {
         Spacer(modifier = Modifier.height(16.dp))
         TextButton(
             onClick = { postDataUsingRetrofit(
-                context, positionName!!, 0.0f, wifiScanResult
+                context, positionName!!, angle!!.toFloat(), wifiScanResult
             ) },
             shape = RectangleShape,
             contentPadding = PaddingValues(16.dp),
@@ -164,7 +170,7 @@ fun ItemRow(index: Int, item: WifiMeasureData) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewMeasureReportScreen() {
-    WifiMeasureReport("grid_1")
+    WifiMeasureReport("grid_1", "2")
 }
 
 private fun postDataUsingRetrofit(

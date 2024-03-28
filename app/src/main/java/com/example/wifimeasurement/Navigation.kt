@@ -13,7 +13,7 @@ import com.example.wifimeasurement.Destinations.REPORT_ROUTE
 
 object Destinations {
     const val MEASURE_ROUTE = "measure"
-    const val REPORT_ROUTE = "report/{positionName}"
+    const val REPORT_ROUTE = "report/{positionName}/{angle}"
 }
 
 @Composable
@@ -35,10 +35,12 @@ fun AppNavHost(
             REPORT_ROUTE,
             arguments = listOf(
                 navArgument("positionName") {type = NavType.StringType},
+                navArgument("angle") {type = NavType.StringType},
             )
         ) { backStackEntry ->
             val positionName = backStackEntry.arguments?.getString("positionName")
-            WifiMeasureReport(positionName)
+            val angle = backStackEntry.arguments?.getString("angle")
+            WifiMeasureReport(positionName, angle)
         }
     }
 }
